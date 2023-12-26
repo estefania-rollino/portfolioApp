@@ -14,7 +14,23 @@ export class ApiService {
     let model: AboutMeViewModel = {
       name: "Jess Evans",
       title: "Software Developer",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      bio: "Senior Web Software Developer with over 10 years of experience in crafting robust and scalable web applications, with exceptional problem-solving skills and passion for clean and efficient code, I have played a key role in the successful delivery of numerous high-profile projects. I am passionate about staying abreast of the latest industry trends and technologies. My curiosity and commitment to continuous learning drive me to explore emerging tools and frameworks that enhance the efficiency and functionality of web applications.",
+      skills: [{
+        name: "HTML",
+        percentage: 90
+      }, {
+        name: "CSS",
+        percentage: 85
+      }, {
+        name: "Angular",
+        percentage: 80
+      }, {
+        name: "TypeScript",
+        percentage: 50
+      }, {
+        name: "Bootstrap",
+        percentage: 40
+      }],
       showProfileImage: true,
       githubLink: "https://github.com/",
       linkedinLink: "https://linkedin.com",

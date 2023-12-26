@@ -1,6 +1,6 @@
 <div *ngIf="viewModel" class="container">
 
-  <div class="card border-0 mt-2 shadow">
+  <div class="card border-0 mt-2 mb-2 shadow">
     <div class="card-body d-flex align-items-center flex-column">
       <img *ngIf="viewModel.showProfileImage" src="/assets/me.jpg" class="rounded-circle profile-img" alt="...">
 
@@ -17,16 +17,27 @@
           <i class="bi bi-cloud-arrow-down-fill"></i>
         </button>
       </div>
-
       <hr>
-      <div class="card-text text-muted">
+      <div class="container card-text text-muted text-center">
         {{viewModel.bio}}
       </div>
+      <ng-container *ngIf="viewModel.skills.length > 0">
+        <hr>
+        <h5 class="card-text">Skills</h5>
+        <div class="container">
+          <ng-container *ngFor="let skill of viewModel.skills">
+            <span class="text-muted">{{skill.name}}</span>
+            <div class="mb-1 progress" role="progressbar" [attr.aria-valuenow]="skill.percentage" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-warning" [ngStyle]="{'width': skill.percentage + '%'}">{{skill.percentage}}%</div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
     </div>
     <div class="card-footer bg-transparent border border-0 d-flex justify-content-end">
-        <button type="button" class="btn btn-warning" [routerLink]="['/portfolio']">
-          Ver Portfolio
-        </button>
-      </div>
+      <button type="button" class="btn btn-warning" [routerLink]="['/portfolio']">
+        Ver Portfolio
+      </button>
+    </div>
   </div>
 </div>
