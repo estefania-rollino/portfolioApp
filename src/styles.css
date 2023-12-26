@@ -2,9 +2,15 @@
 
 body { 
     margin: 0; 
+    padding-top: 80px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .card-footer-purple {
     background: #bb68ea !important ;
+}
+
+.bg-purple {
+    background: -webkit-linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1));
+    background: linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1))
 }

@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -11,23 +11,19 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
   imports: [
     CommonModule, 
     RouterModule
-    /*
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule
-    */
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
-  public toolbarColor: string = "primary";
-  
+export class NavbarComponent {  
   @ViewChildren('aboutMeButton, portfolioButton')
   buttonList!: QueryList<MatButton>;
-  /**
-   *
-   */
+
+  public isTransparent = true;
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.isTransparent = window.scrollY <= 60;
+  }
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute) {    

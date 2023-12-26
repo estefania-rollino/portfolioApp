@@ -1,13 +1,13 @@
-<div class="navbar fixed-top navbar-dark gradient-custom">
+<div [ngClass]="{'transparent': isTransparent, 'solid-purple': !isTransparent}" class="navbar fixed-top">
   <div class="container">
-    <span class="navbar-brand"></span>
+    <h1 class="navbar-brand text-light" [routerLink]="['/about-me']"><img src="/assets/portfolio.png" width="50px">Portfolio</h1>
     <span class="example-spacer"></span>
-    <button #aboutMeButton class="btn btn-light"
-    [routerLink]="['/about-me']">
+    <button #aboutMeButton class="btn text-light"
+    [routerLink]="['/about-me']" [routerLinkActive]="['btn-warning', 'text-dark']">
       Sobre mi
     </button>
-    <button #portfolioButton class="ms-1 btn btn-light"
-      [routerLink]="['/portfolio']">
+    <button #portfolioButton class="ms-1 btn text-light"
+      [routerLink]="['/portfolio']" [routerLinkActive]="['btn-warning', 'text-dark']">
       Portfolio
     </button>
   </div>

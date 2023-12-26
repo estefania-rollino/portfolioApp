@@ -6,4 +6,16 @@
     background: #c471f5;
     background: -webkit-linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1));
     background: linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1))
-  }
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+}
+  
+.navbar.transparent {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+.navbar.solid-purple {
+    background-color: #c471f5 !important;
+}

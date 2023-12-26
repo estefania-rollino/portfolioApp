@@ -6,11 +6,11 @@
 
       <h1 class="card-title">{{viewModel.name}}</h1>
       <h5 class="card-subtitle text-muted">{{viewModel.title}}</h5>
-      <div class="btn-group btn-group-lg">
-        <button *ngIf="viewModel.githubLink" class="btn">
+      <div class="mt-2 btn-group btn-group-lg">
+        <button *ngIf="viewModel.githubLink" class="btn btn-warning">
           <i class="bi bi-github"></i>
         </button>
-        <button *ngIf="viewModel.linkedinLink" class="btn">
+        <button *ngIf="viewModel.linkedinLink" class="btn btn-warning">
           <i class="bi bi-linkedin"></i>
         </button>
         <button *ngIf="viewModel.downloadLink" class="btn">
@@ -19,12 +19,12 @@
       </div>
 
       <hr>
-      <div class="card-text">
+      <div class="card-text text-muted">
         {{viewModel.bio}}
       </div>
     </div>
-    <div class="card-footer card-footer-purple border border-0 d-flex justify-content-end">
-        <button type="button" class="btn btn-light" [routerLink]="['/portfolio']">
+    <div class="card-footer bg-transparent border border-0 d-flex justify-content-end">
+        <button type="button" class="btn btn-warning" [routerLink]="['/portfolio']">
           Ver Portfolio
         </button>
       </div>
