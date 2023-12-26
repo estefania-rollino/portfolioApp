@@ -1,0 +1,59 @@
+<button type="button" class="btn btn-light" [routerLink]="['../']">
+  <i class="bi bi-arrow-left"></i>
+  Volver
+</button>
+<ng-container *ngIf="viewModel">
+  <div class="container mt-2">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      <div *ngFor="let item of viewModel.portfolioItems; let itemIndex = index" class="col">
+        <div class="card border-0 mt-2 shadow">
+          <img *ngIf="item.imageUrl" src="{{item.imageUrl}}" style="height: 200px; object-fit: cover;"
+            class="card-img-top" alt="...">
+
+          <div class="card-header">
+            <h5>{{item.title}}</h5>
+          </div>
+          <div class="card-body">
+            <p class="text-muted">
+              {{item.description}}
+            </p>
+
+            <div *ngIf="item.technologies && item.technologies.length > 0" class="accordion accordion-flush"
+              id="accordionTechstack_{{itemIndex}}">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#techStackContent_' + itemIndex" aria-expanded="false"
+                    aria-controls="flush-collapseOne">
+                    TechStack
+                  </button>
+                </h2>
+                <div id="techStackContent_{{itemIndex}}" class="accordion-collapse collapse"
+                  [attr.data-bs-parent]="'#accordionTechstack_'+ itemIndex">
+                  <div class="accordion-body">
+                    <ul class="list-group list-group-flush">
+                      <li *ngFor="let technology of item.technologies" class="list-group-item">
+                        {{technology}}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="card-footer card-footer-purple border border-0 d-flex justify-content-end">
+            <a *ngIf="item.githubLink" type="button" class="btn btn-light" href="{{item.githubLink}}"
+              target="_blank">
+              <i class="bi bi-github"></i> Github
+            </a>
+            <a *ngIf="item.webLink" type="button" class="ms-1 btn btn-light" href="{{item.webLink}}"
+              target="_blank">
+              <i class="bi bi-browser-chrome"></i> Preview
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.gradient-custom {
+    background: #c471f5;
+    background: -webkit-linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1));
+    background: linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1))
+  }
