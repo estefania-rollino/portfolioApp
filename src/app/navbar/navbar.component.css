@@ -2,12 +2,6 @@
     flex: 1 1 auto;
 }
 
-.gradient-custom {
-    background: #c471f5;
-    background: -webkit-linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1));
-    background: linear-gradient(to right, rgba(196, 113, 245, 1), rgba(100, 18, 137, 1))
-}
-
 .navbar {
     transition: background-color 0.3s ease;
 }
@@ -17,5 +11,5 @@
     box-shadow: none !important;
 }
 .navbar.solid-purple {
-    background-color: #c471f5 !important;
+    background-color:  rgb(103 58 123) !important;
 }
