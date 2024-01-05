@@ -7,15 +7,15 @@
       <h1 class="card-title">{{viewModel.name}}</h1>
       <h5 class="card-subtitle text-muted">{{viewModel.title}}</h5>
       <div class="mt-2 btn-group btn-group-lg">
-        <button *ngIf="viewModel.githubLink" class="btn btn-warning">
+        <a *ngIf="viewModel.githubLink" class="btn btn-warning" role="button" href="{{viewModel.githubLink}}" target="_blank">
           <i class="bi bi-github"></i>
-        </button>
-        <button *ngIf="viewModel.linkedinLink" class="btn btn-warning">
+        </a>
+        <a *ngIf="viewModel.linkedinLink" class="btn btn-warning" href="{{viewModel.linkedinLink}}" target="_blank">
           <i class="bi bi-linkedin"></i>
-        </button>
-        <button *ngIf="viewModel.downloadLink" class="btn btn-warning">
+        </a>
+        <a *ngIf="viewModel.downloadLink" class="btn btn-warning" href="{{viewModel.downloadLink}}" target="_blank">
           <i class="bi bi-cloud-arrow-down-fill"></i>
-        </button>
+        </a>
       </div>
       <hr>
       <div class="container card-text text-muted text-center">
@@ -27,8 +27,10 @@
         <div class="container">
           <ng-container *ngFor="let skill of viewModel.skills">
             <span class="text-muted">{{skill.name}}</span>
-            <div class="mb-1 progress" role="progressbar" [attr.aria-valuenow]="skill.percentage" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-bar bg-warning" [ngStyle]="{'width': skill.percentage + '%'}">{{skill.percentage}}%</div>
+            <div class="mb-1 progress" role="progressbar" [attr.aria-valuenow]="skill.percentage" aria-valuemin="0"
+              aria-valuemax="100">
+              <div class="progress-bar bg-warning" [ngStyle]="{'width': skill.percentage + '%'}">{{skill.percentage}}%
+              </div>
             </div>
           </ng-container>
         </div>
